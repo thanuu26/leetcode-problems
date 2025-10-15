@@ -1,0 +1,12 @@
+class Solution {
+    public int arrangeCoins(int n)
+    {
+      int val=1;
+      while(n>=0)
+        {
+            n-=val;
+            val++;
+        }
+    return val-2;
+    }
+}
