@@ -1,0 +1,7 @@
+class Solution {
+    public int findComplement(int num) {
+        int bitlength=32-Integer.numberOfLeadingZeros(num);
+        int n=(1<<bitlength)-1;
+        return num^n;
+    }
+}
