@@ -1,0 +1,7 @@
+class Solution {
+    public int[] sortByBits(int[] arr) {
+       Integer[] boxed=Arrays.stream(arr).boxed().toArray(Integer[]::new);
+        Arrays.sort(boxed,(a,b)->Integer.bitCount(a)!=Integer.bitCount(b)?Integer.bitCount(a)-Integer.bitCount(b):a-b);
+        return Arrays.stream(boxed).mapToInt(i->i).toArray(); 
+    }
+}
