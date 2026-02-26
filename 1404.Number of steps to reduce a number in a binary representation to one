@@ -1,0 +1,20 @@
+class Solution {
+    public int numSteps(String s) {
+        int steps=0;
+        boolean carry=false;
+        for(int i=s.length()-1;i>0;--i){
+            char bit=s.charAt(i);
+            if(carry){
+                bit=(bit=='0')?'1':'0';
+                carry=(bit=='0');
+            }
+            if(bit=='1'){
+                ++steps;
+                carry=true;;
+            }
+            ++steps;
+        }
+        return steps+(carry?1:0);
+        
+    }
+}
