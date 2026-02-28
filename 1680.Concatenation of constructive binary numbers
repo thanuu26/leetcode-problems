@@ -1,0 +1,11 @@
+class Solution {
+    public int concatenatedBinary(int n) {
+        final int mod=1000000007;
+        long answer=0;
+        for(int i=0;i<=n;i++){
+            int bits=32-Integer.numberOfLeadingZeros(i);
+            answer=((answer<<bits)|i)%mod;
+        }
+        return (int) answer;
+    }
+}
